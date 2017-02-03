@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5718361-0e0b-4618-b5b7-0e9ca8d1971e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/image_paths.iml" afterPath="$PROJECT_DIR$/.idea/image_paths.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/exe/image_paths" afterPath="$PROJECT_DIR$/exe/image_paths" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image_paths.gemspec" afterPath="$PROJECT_DIR$/image_paths.gemspec" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/image_paths.rb" afterPath="$PROJECT_DIR$/lib/image_paths.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/image_paths/version.rb" afterPath="$PROJECT_DIR$/lib/image_paths/version.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/image_paths_spec.rb" afterPath="$PROJECT_DIR$/spec/image_paths_spec.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +21,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="image_paths.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="image_paths.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/image_paths.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="219">
               <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -73,6 +77,11 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="flyingminer &lt;blookho@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -83,6 +92,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/image_paths.gemspec" />
         <option value="$PROJECT_DIR$/lib/image_paths.rb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -391,12 +401,20 @@
       <updated>1486042537756</updated>
       <workItem from="1486042539289" duration="170000" />
       <workItem from="1486042723159" duration="4054000" />
-      <workItem from="1486103779207" duration="10930000" />
+      <workItem from="1486103779207" duration="11001000" />
     </task>
+    <task id="LOCAL-00001" summary="Errors handling">
+      <created>1486117951933</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1486117951933</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15154000" />
+    <option name="totallyTimeSpent" value="15225000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="323" y="145" width="1485" height="881" extended-state="0" />
@@ -426,6 +444,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Errors handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Errors handling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -512,14 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -599,6 +613,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding />
         </state>
       </provider>
