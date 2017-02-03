@@ -6,12 +6,15 @@ require 'image_paths/version'
 Gem::Specification.new do |spec|
   spec.name          = "image_paths"
   spec.version       = ImagePaths::VERSION
-  spec.authors       = ["flyingminer"]
-  spec.email         = ["blookho@gmail.com"]
+  spec.authors       = ["Aleksei Ivanishchev"]
+  spec.email         = ["zoneiva@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "This is an example!"
+  # %q{TODO: Write a short summary, because Rubygems requires one.}
+  spec.description   = 'Easy collect source paths of all images on HTML page'
+    # %q{TODO: Write a longer description or delete this line.}
+  spec.homepage      = 'https://github.com/ruby/rake'
+  # "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -31,6 +34,15 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.13"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake", '~> 0' #, "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "guard", '~> 0'#, "~> 3.0"
+  spec.add_development_dependency "guard-rspec", '~> 0'#, "~> 3.0"
+
+  spec.add_runtime_dependency "nokogiri", '~> 1.7'# , ["= 1.1.0"]
+  spec.add_runtime_dependency "httparty", '~> 0'#, "~> 3.0"
+
 end
+
+
+# gem install httparty

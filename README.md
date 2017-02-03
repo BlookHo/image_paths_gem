@@ -1,12 +1,12 @@
-# ImagePaths
+## ImagePaths
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/image_paths`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to my new gem!
+ 
+It is intended to easy get all images paths from HTML page.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+gem install image_paths-0.1.0.gem
 
 ```ruby
 gem 'image_paths'
@@ -22,17 +22,50 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
+    require 'image_paths'
+ 
+    ImagePaths.image_paths('https://moikrug.ru/vacancies/1000031431')
+
+where 'https://moikrug.ru/vacancies/1000031431' - is HTML page url where images paths are to collected.
+
+#### Example output
+
+    A Ruby array: 
+    => ["https://www.facebook.com/tr?id=203653866652939&ev=PageView&noscript=1",
+       "https://habrastorage.org/getpro/moikrug/uploads/company/100/005/255/1/logo/medium_f19113ec4c4fdac7af49f748ba45fedc.png",
+       "https://habracdn.net/mk/assets/no_content.icon.access_denied-999f611531008ac991f274b594fa49d5.png",
+       "https://mc.yandex.ru/watch/38498795",
+       "//stats.tmtm.ru/piwik.php?idsite=7"]
+
+In case there are no images on the page - output array will be empty: [].
+
+
 
 ## Development
+install dependencies:
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+    `bin/setup`
+     
+run the tests:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+     `rake spec` 
+     or
+     'bundle exec rspec'
+
+To install this gem onto your local machine:
+
+     `bundle exec rake install`
+
+To release a new version, update the version number in `version.rb`,
+and then run `bundle exec rake release` 
+to create a git tag for the version.
+Then push git commits and tags,
+push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/image_paths. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[BlookHo]/image_paths. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
