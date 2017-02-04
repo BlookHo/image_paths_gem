@@ -9,14 +9,13 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Aleksei Ivanishchev']
   spec.email         = ['zoneiva@gmail.com']
 
-  spec.summary       = "Call ImagePaths.at('path')"
+  spec.summary       = "useage: ImagePaths.at('path')"
   spec.description   = 'Easy collect source paths of all images on HTML page'
-    # %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = 'https://github.com/ruby/rake'
-  # "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = 'https://github.com/BlookHo/image_paths_gem'
   spec.license       = 'MIT'
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
+  # Prevent pushing this gem to RubyGems.org.
+  # To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
@@ -33,16 +32,13 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.13'
-  spec.add_development_dependency 'rake', '~> 0' #, '~> 10.0'
+  spec.add_development_dependency 'rake', '~> 0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'guard', '~> 0'#, '~> 3.0'
-  spec.add_development_dependency 'guard-rspec', '~> 0'#, '~> 3.0'
-  spec.add_development_dependency 'rubocop', '~> 0'#, '~> 3.0'
+  spec.add_development_dependency 'guard', '~> 0'
+  spec.add_development_dependency 'guard-rspec', '~> 0'
+  spec.add_development_dependency 'rubocop', '~> 0'
 
-  spec.add_runtime_dependency 'nokogiri', '~> 1.7'# , ['= 1.1.0']
-  spec.add_runtime_dependency 'httparty', '~> 0'#, '~> 3.0'
+  spec.add_runtime_dependency 'nokogiri', '~> 1.7'
+  spec.add_runtime_dependency 'httparty', '~> 0'
 
 end
-
-
-# gem install httparty
