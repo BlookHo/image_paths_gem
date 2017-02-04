@@ -6,7 +6,7 @@ It is intended to easy get all images paths from HTML page.
 
 ## Installation
 
-gem install image_paths-0.1.0.gem
+gem install image_paths-0.1.0.gem in your __Gemfile__
 
 ```ruby
 gem 'image_paths'
@@ -16,7 +16,7 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it yourself in your project folder as:
 
     $ gem install image_paths
 
@@ -25,7 +25,7 @@ Or install it yourself as:
 
     require 'image_paths'
  
-    ImagePaths.image_paths('https://moikrug.ru/vacancies/1000031431')
+    ImagePaths.at('https://moikrug.ru/vacancies/1000031431')
 
 where 'https://moikrug.ru/vacancies/1000031431' - is HTML page url where images paths are to collected.
 

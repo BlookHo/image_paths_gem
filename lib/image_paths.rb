@@ -1,86 +1,105 @@
-# require 'json'
-
-require "image_paths/version"
+require 'image_paths/version'
 require 'nokogiri'
 require 'open-uri'
 require 'uri'
 require 'httparty'
 
+# Main gem class
 class ImagePaths
-  def self.image_paths(page_path)
-    return collect_links(page_path) if (url_correct?(page_path) && page_response_ok?(page_path))
+  def self.at(page_path)
+    begin
+      return collect_paths(page_path) if path_correct?(page_path)
+    rescue => e
+      puts "StandardError: #{e}"
+      return []
+    end
     []
   end
 
-  def self.url_correct?(page_path)
-    unless page_path =~ /\A#{URI::regexp(['http', 'https'])}\z/
-      p "Error: bad url"
+  def self.path_correct?(page_path)
+    uri_ok?(page_path) && response_ok?(page_path)
+  end
+
+  def self.uri_ok?(page_path)
+    unless page_path =~ /\A#{URI.regexp(['http', 'https'])}\z/
+      puts 'Error: bad uri'
       return false
     end
-    # p "url_correct"
     true
   end
 
-  # response.body, response.code, response.message, response.headers.inspect
-  def self.page_response_ok?(page_path)
+  # response.body, .code, .message, .headers.inspect
+  def self.response_ok?(page_path)
     begin
       response = HTTParty.get(page_path)
-      unless response.code.to_i < 400
-        puts "Error: bad response: response.code = #{response.code} "#.inspect
+      if response.code.to_i >= 400
+        puts "Error: bad response: response.code = #{response.code}"
         return false
       end
     rescue HTTParty::Error
-      puts 'Error: bad response. HTTParty::Error '#, response.code
+      puts 'HTTParty::Error: bad response. HTTParty::Error '
       return false
-        # don´t do anything / whatever
     rescue StandardError
-      p 'StandardError: bad response.'#, response.code
+      puts 'StandardError: bad response'
       return false
     end
-    # p "page response ok"
     true
-    # response = HTTParty.get(page_path)
-    # response.each do |item|
-    #   puts item#['user']['screen_name']
-    # end
   end
 
-  def self.collect_links(page_path)  #, :allow_redirections => :all
+  def self.collect_paths(page_path)
     links = []
-    # page = Nokogiri::HTML(open(page_path))
-    Nokogiri::HTML(open(page_path)).css('img').select{ |link| links << link.attr('src') }
-    # puts "links = ", links
+    Nokogiri::HTML(open(page_path)).css('img').select {
+      |link| links << link.attr('src')
+    }
     links
   end
-
 end
 
-# a = ImagePaths.image_paths('http://twitter.com/statuses/public_timeline.json')
+
+# a = ImagePaths.at('http://twitter.com/statuses/public_timeline.json')
 # 404 Not Found
+# StandardError:: response.code = 404
 
-# a = ImagePaths.image_paths("https://moikrug.ru/vacancies/1000031431")
-#ok
+# main answer
+# a = ImagePaths.at("https://moikrug.ru/vacancies/1000031431")
+#ok response.code = 200
 
-# a = ImagePaths.image_paths("https://github.com/nslocum/design-patterns-in-ruby")
-#ok
+# a = ImagePaths.at('http://brainlook.org')
+# Ok response.code = 200
 
-# a = ImagePaths.image_paths('https://127.0.0.1/send_bitcoins')
-# uncorrect url
+# a = ImagePaths.at("https://github.com/nslocum/design-patterns-in-ruby")
+#ok response.code = 200
 
-# a = ImagePaths.image_paths('http:/../../../../../etc/passwd')
-# uncorrect url
+# a = ImagePaths.at('https://github.com/BlookHo/image_paths_gem')
+# Ok response.code = 200
 
-a = ImagePaths.image_paths('chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#uri=https://sourcemaking.com/design_patterns/template_method')
-# uncorrect url
+# a = ImagePaths.at('https://127.0.0.1/send_bitcoins')
+# "StandardError: bad response."
+
+# a = ImagePaths.at('http:/../../../../../etc/passwd')
+# "StandardError: bad response."
+# StandardError:: undefined method `code' for nil:NilClass !!!
+
+
+# a = ImagePaths.at('chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#uri=https://sourcemaking.com/design_patterns/template_method')
+# "Error: bad url"
+
+# a = ImagePaths.at('http://||=')
+# "Error: bad url"
+
+# a = ImagePaths.at(khbkjb)
+# undefined local variable or method `khbkjb'  (NameError)
+
 
 
 
 
 
 # puts a.inspect
-puts "\n"
-puts a #.inspect# if a==[]
-p a if a==[]
+
+# puts "\n"
+# puts a #.inspect# if a==[]
+# p a if a==[]
 
 
-# TODO:: RSpec: errors  + make diff-t urls (Faker)
+# TODO: RSpec: errors  + make diff-t urls (Faker)
